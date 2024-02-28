@@ -23,17 +23,18 @@
         }
 
         // Taking all 5 values from the form data(input)
-        $email_address =  $_REQUEST['email_address'];
-        $lessonID = $_REQUEST['lessonID'];
+        $first_name =  $_REQUEST['first_name'];
+        $last_name = $_REQUEST['last_name'];
         $comments = $_POST['comments'];
+        $lessonID = $_REQUEST['lessonID'];
 
         // Performing insert query execution
         // here our table name is college
-        $sql = "INSERT INTO insert_lesson  VALUES ('$email_address','$lessonID')";
+        $sql = "INSERT INTO insert_lesson  VALUES ('$first_name','$last_name')";
 
         if (mysqli_query($conn, $sql)) {
 
-            //echo nl2br("$email_address\n $lessonID");
+            //echo nl2br("$first_name\n $last_name");
         } else {
             echo "ERROR: Hush! Sorry $sql. "
                 . mysqli_error($conn);
@@ -66,19 +67,36 @@
             backdrop-filter: blur(30px);
             ">
                         <div class="card-body p-5 shadow-5 text-center">
-                            <h2 class="fw-bold mb-5">Insert your code here</h2>
-                            <form action="" method="post">
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <div class="form-outline mb-4">
+                                <form action="" method="post">
+                                    <label class="form-label" for="LessonID">Lesson's ID</label>
+                                    <input type="LessonID" name="lessonID" id="lessonID" class="form-control" />
 
-                                <div>
-                                    <textarea rows=" 25" cols="70" name="comments" id="comments">
+                            </div>
+                            <label class="fw-bold mb-5">Insert your code here</label>
+
+                            <div class="form-outline mb-4" hidden>
+                                <input type="FirstName" name="first_name" id="first_name" class="form-control" />
+                                <label class="form-label" for="firstName">First Name</label>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4" hidden>
+                                <input type="LastName" name="last_name" id="last_name" class="form-control" />
+                                <label class="form-label" for="lastName">Last Name</label>
+                            </div>
+
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                            <div>
+                                <textarea rows=" 25" cols="70" name="comments" id="comments">
                                 </textarea>
-                                </div>
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block mb-4">
-                                    Insert
-                                </button>
-                                <br />
+                            </div>
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">
+                                Insert
+                            </button>
+                            <br />
                             </form>
                         </div>
                     </div>
@@ -88,11 +106,11 @@
                 </div>
                 <?php
 
-                echo "The comment that you entered is:" . $comments . "<br>";
+                // echo "The comment that you entered is:" . $comments . "<br>";
                 $comments = explode("&", $comments);
                 $i = 0;
                 foreach ($comments as $value) {
-                    print $lessonID;
+                    // print $lessonID . '<br>';
                     $i++;
 
                     $sql = "INSERT INTO test_data VALUES ('$i','$value','$lessonID')";

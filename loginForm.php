@@ -5,7 +5,8 @@
     <title>Login to Page</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1802/1802977.png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -13,15 +14,15 @@
     <!-- Section: Design Block -->
     <section class="text-center text-lg-start">
         <style>
-            .cascading-right {
-                margin-right: -50px;
-            }
+        .cascading-right {
+            margin-right: -50px;
+        }
 
-            @media (max-width: 991.98px) {
-                .cascading-right {
-                    margin-right: 0;
-                }
+        @media (max-width: 991.98px) {
+            .cascading-right {
+                margin-right: 0;
             }
+        }
         </style>
 
         <!-- Jumbotron -->
@@ -37,17 +38,24 @@
                             <form action="insert.php" method="post">
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
 
-
+                                <div class="form-outline mb-4" hidden>
+                                    <input type="lessonID" name="lessonID" id="lessonID" class="form-control" />
+                                    <label class="form-label" for="lessonID">First Name</label>
+                                </div>
+                                <div class="form-outline mb-4" hidden>
+                                    <input type="comments" name="comments" id="comments" class="form-control" />
+                                    <label class="form-label" for="comments">First Name</label>
+                                </div>
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
-                                    <input type="email" name="email_address" id="email_address" class="form-control" />
-                                    <label class="form-label" for="emailAddress">Email address</label>
+                                    <input type="FirstName" name="first_name" id="first_name" class="form-control" />
+                                    <label class="form-label" for="firstName">First Name</label>
                                 </div>
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input type="lessonID" name="lessonID" id="lessonID" class="form-control" />
-                                    <label class="form-label" for="lessonID">Lesson ID</label>
+                                    <input type="LastName" name="last_name" id="last_name" class="form-control" />
+                                    <label class="form-label" for="lastName">Last Name</label>
                                 </div>
 
                                 <!-- Submit button -->
@@ -61,7 +69,8 @@
                 </div>
 
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="w-100 rounded-4 shadow-4" alt="" />
+                    <img src="https://images.unsplash.com/photo-1576836165612-8bc9b07e7778?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+                        class="w-100 rounded-4 shadow-4" alt="" />
                 </div>
             </div>
         </div>
