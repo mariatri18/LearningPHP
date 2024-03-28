@@ -1,7 +1,6 @@
 # CODEWizardry - The new way of leanring a programming language
 
-```
-public class PrimeNumberChecker {
+``` public class PrimeNumberChecker {
 
     public static boolean isPrime(int number) {
         if (number <= 1) {
@@ -23,5 +22,5 @@ public class PrimeNumberChecker {
             System.out.println(num + " is not a prime number.");
         }
     }
-}
+} 
 ```

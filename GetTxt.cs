@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,11 +21,7 @@ public class GetTxt : MonoBehaviour
 
     void Start()
     {
-
-
-        
-
-       
+        StartCoroutine(GetText());
 
         GameObject.Find("Item1").GetComponentInChildren<TextMeshProUGUI>().text = "USER111111111111";
 
@@ -35,7 +32,19 @@ public class GetTxt : MonoBehaviour
         gg.name = "Itme11";
 
 
+        IEnumerator GetText() {
+            using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/PHP/GetData.php")){
+                yield return www.Send();
 
+                if (www.isNetworkError || www.isHttpError) {
+                    Debug.Log(www.error);
+                }
+                else {
+                    Debug.Log(www.downloadHandler.text);
+                    byte[] results = www.downloadHandler.data;
+                }
+            }
+        }
 
     }
 
